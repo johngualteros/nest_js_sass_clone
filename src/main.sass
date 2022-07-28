@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap')
+$black: #111111
+$white: #fff
+$red: #ea2845
+$redDark: #ed1543ff
+
+@mixin btn($background,$color,$border)
+    background-color: $background
+    color: $color
+    border: none
+    border-radius: 25px
+    padding: 15px 50px
+    margin: 10px 20px 0 0
+    font-size: 1.1rem
+    @if $border
+        border: 1px solid $white
+
+@mixin reset-pm()
+    margin: 0
+    padding: 0
+body
+    overflow-x: hidden
+    @include reset-pm()
+    font-family: Montserrat,sans-serif
+.container-home
+    width: 100%
+    height: 98vh
+    display: flex
+    flex-direction: column
+    justify-content: center
+    background-image: url(https://d33wubrfki0l68.cloudfront.net/b48d3f70dffd76bf3152ad04e2cbb1261ef589c9/header.1af6756a.png)
+    background-size: 100% 100%
+    background-attachment: fixed
+    overflow: hidden !important
+    color: $white
+    line-height: 2px
+
+    h1
+        font-size: 3rem
+        padding: 0
+        font-weight: bold
+        margin-left: 100px
+    p
+        line-height: 25px
+        font-size: 1.1rem
+        margin-left: 100px
+    .btn-documentation
+        @include btn($red,$white,false)
+        margin-left: 100px
+    .btn-code
+        @include btn(transparent,$white,true)
+
+.container-targets
+    width: 100%
+    height: auto
+    padding: 20px 0 20px 0
+    flex-direction: row
+    display: flex
+    justify-content: space-around
+    align-items: center
+    flex-flow: wrap
+    background-color: $white
+    color: $black
+    text-align: center
+    overflow: hidden
+    .card
+        width: 300px
+        h3
+            color: $red
+            font-weight: bold
+        p
+            font-size: 1rem
+.container-learn
+    width: 100%
+    height: 65vh
+    background-image: url(https://d33wubrfki0l68.cloudfront.net/2e87d126358935e3c9984030c481fc79197e3daa/support.b363d5ad.png)
+    background-size: contain
+    background-position: left
+    background-repeat: no-repeat
+    background-color: $redDark
+    display: flex
+    align-items: center
+    justify-content: flex-end
+    color: $white
+
+    .content-learn
+        width: 40%
+        padding-right: 20%
+        h2
+            font-size: 1.7rem
+            font-weight: bold
+            margin-bottom: 20px
+        p
+            font-size: 1.1rem
+            margin-bottom: 20px
+        .btn-learn
+            @include btn($white,$red,true)
+.container-live-preview
+    width: 100%
+    height: 110vh
+    background-color: #141414
+    text-align: center
+    color: $white
+    padding: 20px 0
+
+.color-red
+    color: $red
+
+.conferences
+    width: 100%
+    height: 110vh
+    background-color: #111111
+    text-align: center
+    color: $white
+    padding: 20px 0
+.partners
+    width: 100%
+    height: 50vh
+    background-color: $white
+    text-align: center
+    color: $black
+    padding: 20px 0
+    h1
+        font-size: 2rem
+        color: $red
+        font-weight: bold
+        margin-bottom: 20px
+    p
+        font-size: 1.1rem
+        margin-bottom: 20px
+.img-sponsors
+    img
+        margin: 0 10px
+        filter: grayscale(1)
+        opacity: .5
+        cursor: pointer
+    img:hover
+        filter: grayscale(0)
+        opacity: 1
+.btn-sponsor
+    @include btn($red,$white,false)
+    margin-top: 20px
+.subscription
+    width: 100%
+    height: 20vh
+    display: flex
+    flex-direction: row
+    justify-content: space-around
+    align-items: center
+    flex-flow: wrap
+    background-color: #eee
+    color: $black
+    h1
+        font-size: 1.2rem
+        color: $red
+        font-weight: bold
+    p
+        font-size: .8rem
+    input
+        width: 60%
+        border: none
+        padding: 10px
+        font-size: 1.1rem
+        outline: none
+        box-shadow: 0 0 5px rgba(0,0,0,0.2)
+    .btn-subscribe
+        padding: 10px
+        font-size: 1.1rem
+        background-color: $red
+        color: $white
+        border: none
+footer
+    width: 100%
+    height: 20vh
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    background-color: $white
+    color: #C0C0C0
+    padding: 20px
+    text-align: center
+    p
+        font-size: 1.1rem
+        margin-bottom: 20px
+    a
+        color: #C0C0C0
+        text-decoration: none
+        font-size: 1.1rem
+        margin-bottom: 20px
+
+nav
+    width: 100%
+    height: 100px
+    display: flex
+    align-items: center
+    justify-content: space-between
+    position: fixed
+    top: 0
+    z-index: 2
+    font-family: 'Montserrat', sans-serif
+    color: #fff
+    transition: all 0.5s linear
+    .link
+        margin: 0 10px
+        text-decoration: none
+        font-size: 1rem
+        font-weight: bold
+        color: $white
+        &:hover
+            color: #ed1543ff
+
+.navbar-scrolled
+    width: 100%
+    height: 100px
+    display: flex
+    align-items: center
+    justify-content: space-between
+    position: fixed
+    top: 0
+    z-index: 2
+    font-family: 'Montserrat', sans-serif
+    background-color: #fff
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5)
+    transition: all 0.5s linear
+
+    .link
+        margin: 0 10px
+        text-decoration: none
+        font-size: 1rem
+        font-weight: bold
+        color: $black
+        &:hover
+            color: #ed1543ff
+
+img
+    margin-left: 80px
+.links
+    padding: 0 100px
+
+.video
+    border-radius: 2px
+    border-top: 2px solid #FF7800
+    
+
